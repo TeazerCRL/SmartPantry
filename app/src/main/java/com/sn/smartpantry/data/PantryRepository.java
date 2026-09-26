@@ -33,6 +33,11 @@ public class PantryRepository {
         return pantryDao.getAllItemsSnapshot();
     }
 
+    // Used by AddEditPantryActivity to load one item when editing it.
+    public LiveData<PantryItem> getItemById(int id) {
+        return pantryDao.getItemById(id);
+    }
+
     public void insert(PantryItem item) {
         AppDatabase.databaseWriteExecutor.execute(() -> pantryDao.insert(item));
     }
