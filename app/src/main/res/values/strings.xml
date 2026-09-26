@@ -1,3 +1,58 @@
 <resources>
     <string name="app_name">SmartPantry</string>
+
+    <!-- Common actions -->
+    <string name="action_save">Save</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add_ingredient">Add ingredient</string>
+    <string name="action_clear_expiry">Clear expiry date</string>
+
+    <!-- Pantry list screen -->
+    <string name="title_pantry">My Pantry</string>
+    <string name="menu_suggestions">What can I cook?</string>
+    <string name="empty_pantry">No ingredients yet. Tap + to add one.</string>
+    <string name="dialog_delete_title">Delete ingredient?</string>
+    <string name="dialog_delete_message">Remove %1$s from your pantry?</string>
+    <string name="msg_item_deleted">%1$s deleted</string>
+
+    <!-- Add / Edit ingredient screen -->
+    <string name="title_add_ingredient">Add Ingredient</string>
+    <string name="title_edit_ingredient">Edit Ingredient</string>
+    <string name="hint_ingredient_name">Ingredient name</string>
+    <string name="hint_quantity">Quantity</string>
+    <string name="hint_unit">Unit</string>
+    <string name="hint_expiry">Expiry date (optional)</string>
+
+    <!-- Validation errors -->
+    <string name="error_name_required">Please enter an ingredient name</string>
+    <string name="error_name_too_long">Name must be %1$d characters or fewer</string>
+    <string name="error_name_letters">Use letters, spaces, hyphens or apostrophes only</string>
+    <string name="error_quantity_required">Please enter a quantity</string>
+    <string name="error_quantity_invalid">Enter a valid number, e.g. 2 or 0.5</string>
+    <string name="error_quantity_positive">Quantity must be greater than 0</string>
+    <string name="error_quantity_too_large">That quantity is too large</string>
+    <string name="error_unit_required">Please choose a unit</string>
+
+    <!-- Feedback messages -->
+    <string name="msg_item_added">%1$s added to pantry</string>
+    <string name="msg_item_updated">%1$s updated</string>
+    <string name="msg_item_not_found">That item no longer exists</string>
+
+    <!-- Suggested recipes screen -->
+    <string name="title_suggestions">Suggested Recipes</string>
+    <string name="tab_ready_default">Ready to cook</string>
+    <string name="tab_almost_default">Almost there</string>
+    <string name="tab_ready">Ready to cook (%1$d)</string>
+    <string name="tab_almost">Almost there (%1$d)</string>
+    <string name="empty_ready">No recipes match your pantry yet. Add more ingredients.</string>
+    <string name="empty_almost">No recipes are just one ingredient away.</string>
+    <string name="recipe_ingredient_count">You have all %1$d ingredients</string>
+    <string name="recipe_missing">Missing: %1$s</string>
+
+    <!-- Recipe detail screen -->
+    <string name="heading_ingredients">Ingredients</string>
+    <string name="heading_method">Method</string>
+    <string name="msg_recipe_not_found">That recipe could not be found</string>
 </resources>
