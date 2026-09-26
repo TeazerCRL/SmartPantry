@@ -18,6 +18,7 @@ import com.sn.smartpantry.data.entity.PantryItem;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 /** Shows the pantry items on the Pantry List screen. */
 public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryViewHolder> {
@@ -65,6 +66,7 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         Context context = holder.itemView.getContext();
 
         holder.name.setText(item.name);
+        holder.avatar.setText(firstLetter(item.name));
         String qty = (item.quantity == Math.floor(item.quantity))
                 ? String.valueOf((int) item.quantity)
                 : String.valueOf(item.quantity);
@@ -107,6 +109,12 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
         }
     }
 
+    /** "egg" becomes "E" for the round avatar. */
+    private static String firstLetter(String name) {
+        String trimmed = name == null ? "" : name.trim();
+        return trimmed.isEmpty() ? "?" : trimmed.substring(0, 1).toUpperCase(Locale.getDefault());
+    }
+
     /** Whole days from today until the given date: 0 = today, negative = already past. */
     static long daysUntil(long expiryMillis) {
         Calendar today = startOfDay(Calendar.getInstance());
@@ -131,12 +139,13 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.PantryView
     }
 
     static class PantryViewHolder extends RecyclerView.ViewHolder {
-        final TextView name, quantity, expiry;
+        final TextView avatar, name, quantity, expiry;
         final ImageButton deleteButton;
         final ColorStateList defaultExpiryColor; // remembered so we can undo the red
 
         PantryViewHolder(@NonNull View itemView) {
             super(itemView);
+            avatar = itemView.findViewById(R.id.itemAvatar);
             name = itemView.findViewById(R.id.itemName);
             quantity = itemView.findViewById(R.id.itemQuantity);
             expiry = itemView.findViewById(R.id.itemExpiry);

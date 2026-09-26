@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sn.smartpantry.data.RecipeMatcher;
@@ -55,9 +56,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
         if (showMissing) {
             holder.details.setText(holder.itemView.getContext().getString(
                     R.string.recipe_missing, TextUtils.join(", ", match.missing)));
+            holder.badge.setText(R.string.badge_missing);
+            holder.badge.setBackgroundResource(R.drawable.bg_badge_missing);
+            holder.badge.setTextColor(holder.missingBadgeColor);
         } else {
             holder.details.setText(holder.itemView.getContext().getString(
                     R.string.recipe_ingredient_count, match.ingredients.size()));
+            holder.badge.setText(R.string.badge_ready);
+            holder.badge.setBackgroundResource(R.drawable.bg_badge_ready);
+            holder.badge.setTextColor(holder.readyBadgeColor);
         }
 
         holder.itemView.setOnClickListener(v -> listener.onRecipeClicked(match));
@@ -69,12 +76,19 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     }
 
     static class RecipeViewHolder extends RecyclerView.ViewHolder {
-        final TextView name, details;
+        final TextView name, details, badge;
+        final int readyBadgeColor, missingBadgeColor;
 
         RecipeViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.recipeName);
             details = itemView.findViewById(R.id.recipeDetails);
+            badge = itemView.findViewById(R.id.recipeBadge);
+            // Text colours that match the green and orange badge backgrounds.
+            readyBadgeColor = ContextCompat.getColor(itemView.getContext(),
+                    R.color.sp_on_primary_container);
+            missingBadgeColor = ContextCompat.getColor(itemView.getContext(),
+                    R.color.sp_on_secondary_container);
         }
     }
 }
