@@ -51,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:paddingTop="4dp"
             android:paddingBottom="16dp" />
 
         <TextView
@@ -59,8 +60,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:lineSpacingExtra="6dp"
             android:padding="24dp"
             android:text="@string/empty_ready"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
             android:visibility="gone" />
     </FrameLayout>
 </LinearLayout>
