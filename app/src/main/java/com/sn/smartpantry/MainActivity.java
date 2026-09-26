@@ -3,6 +3,7 @@ package com.sn.smartpantry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +13,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sn.smartpantry.data.PantryRepository;
 import com.sn.smartpantry.data.entity.PantryItem;
 
+/** Home screen: the Pantry List. */
 public class MainActivity extends AppCompatActivity implements PantryAdapter.OnItemActionListener {
 
     private PantryRepository repository;
@@ -32,6 +36,17 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
             return insets;
         });
 
+        // Toolbar menu = the app's navigation element.
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu_main);
+        toolbar.setOnMenuItemClickListener(menuItem -> {
+            if (menuItem.getItemId() == R.id.action_suggestions) {
+                startActivity(new Intent(this, SuggestedRecipesActivity.class));
+                return true;
+            }
+            return false;
+        });
+
         repository = new PantryRepository(getApplication());
 
         RecyclerView recyclerView = findViewById(R.id.pantryRecyclerView);
@@ -41,26 +56,35 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
 
         View emptyText = findViewById(R.id.emptyText);
 
+        // LiveData: the list refreshes by itself whenever the pantry table changes.
         repository.getAllItems().observe(this, items -> {
             adapter.submitList(items);
             emptyText.setVisibility(items == null || items.isEmpty() ? View.VISIBLE : View.GONE);
         });
 
-        findViewById(R.id.fabAddItem).setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AddEditPantryActivity.class);
-            startActivity(intent);
-        });
+        findViewById(R.id.fabAddItem).setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, AddEditPantryActivity.class)));
     }
 
     @Override
     public void onItemClicked(PantryItem item) {
         Intent intent = new Intent(this, AddEditPantryActivity.class);
-        intent.putExtra("item_id", item.id);
+        intent.putExtra(AddEditPantryActivity.EXTRA_ITEM_ID, item.id);
         startActivity(intent);
     }
 
     @Override
     public void onDeleteClicked(PantryItem item) {
-        repository.delete(item);
+        // Ask first, so one mis-tap doesn't delete an ingredient.
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.dialog_delete_title)
+                .setMessage(getString(R.string.dialog_delete_message, item.name))
+                .setNegativeButton(R.string.action_cancel, null)
+                .setPositiveButton(R.string.action_delete, (dialog, which) -> {
+                    repository.delete(item);
+                    Toast.makeText(this, getString(R.string.msg_item_deleted, item.name),
+                            Toast.LENGTH_SHORT).show();
+                })
+                .show();
     }
 }
