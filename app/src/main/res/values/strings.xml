@@ -8,10 +8,12 @@
     <string name="action_delete">Delete</string>
     <string name="action_add_ingredient">Add ingredient</string>
     <string name="action_clear_expiry">Clear expiry date</string>
+    <string name="action_delete_item">Delete %1$s</string>
 
     <!-- Pantry list screen -->
     <string name="title_pantry">My Pantry</string>
     <string name="menu_suggestions">What can I cook?</string>
+    <string name="menu_settings">Settings</string>
     <string name="empty_pantry">No ingredients yet. Tap + to add one.</string>
     <string name="dialog_delete_title">Delete ingredient?</string>
     <string name="dialog_delete_message">Remove %1$s from your pantry?</string>
@@ -55,4 +57,27 @@
     <string name="heading_ingredients">Ingredients</string>
     <string name="heading_method">Method</string>
     <string name="msg_recipe_not_found">That recipe could not be found</string>
+
+    <!-- Expiry labels on the pantry list -->
+    <string name="expiry_expired">Expired</string>
+    <string name="expiry_today">Expires today</string>
+    <plurals name="expiry_in_days">
+        <item quantity="one">Expires tomorrow</item>
+        <item quantity="other">Expires in %1$d days</item>
+    </plurals>
+    <plurals name="expiry_banner">
+        <item quantity="one">%1$d item expires within %2$d days or has expired</item>
+        <item quantity="other">%1$d items expire within %2$d days or have expired</item>
+    </plurals>
+
+    <!-- Settings screen -->
+    <string name="title_settings">Settings</string>
+    <string name="setting_expiry_alerts">Expiring-soon alerts</string>
+    <string name="setting_expiry_alerts_summary">Highlight pantry items in red when they are close to their expiry date, so they get used first.</string>
+    <string name="setting_expiry_days">Count as expiring soon within</string>
+    <string name="days_1">1 day</string>
+    <string name="days_3">3 days</string>
+    <string name="days_7">7 days</string>
+    <string name="setting_about_title">About SmartPantry</string>
+    <string name="setting_about_text">SmartPantry only suggests a recipe when you already have every ingredient it needs, in the right amount, to help cut food waste.</string>
 </resources>

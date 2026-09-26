@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Expiring-soon warning (pantry list label and banner) -->
+    <color name="expiry_warning">#FFC62828</color>
+    <color name="expiry_banner_background">#1FC62828</color>
 </resources>
