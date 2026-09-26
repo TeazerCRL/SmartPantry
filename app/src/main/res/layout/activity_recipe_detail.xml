@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/detailRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:navigationContentDescription="@string/action_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heading_ingredients"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <TextView
+                android:id="@+id/ingredientsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="6dp"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/heading_method"
+                android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+            <TextView
+                android:id="@+id/instructionsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="6dp"
+                android:textAppearance="?attr/textAppearanceBodyLarge" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
