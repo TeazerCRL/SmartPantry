@@ -14,7 +14,8 @@
     <string name="title_pantry">My Pantry</string>
     <string name="menu_suggestions">What can I cook?</string>
     <string name="menu_settings">Settings</string>
-    <string name="empty_pantry">No ingredients yet. Tap + to add one.</string>
+    <string name="empty_pantry">🧺\nYour pantry is empty\nTap Add ingredient to get started</string>
+    <string name="subtitle_pantry">Cook with what you already have</string>
     <string name="dialog_delete_title">Delete ingredient?</string>
     <string name="dialog_delete_message">Remove %1$s from your pantry?</string>
     <string name="msg_item_deleted">%1$s deleted</string>
@@ -48,10 +49,12 @@
     <string name="tab_almost_default">Almost there</string>
     <string name="tab_ready">Ready to cook (%1$d)</string>
     <string name="tab_almost">Almost there (%1$d)</string>
-    <string name="empty_ready">No recipes match your pantry yet. Add more ingredients.</string>
-    <string name="empty_almost">No recipes are just one ingredient away.</string>
+    <string name="empty_ready">🥕\nNo recipes match your pantry yet\nAdd more ingredients</string>
+    <string name="empty_almost">🛒\nNo recipes are just one ingredient away</string>
     <string name="recipe_ingredient_count">You have all %1$d ingredients</string>
     <string name="recipe_missing">Missing: %1$s</string>
+    <string name="badge_ready">Ready</string>
+    <string name="badge_missing">1 missing</string>
 
     <!-- Recipe detail screen -->
     <string name="heading_ingredients">Ingredients</string>

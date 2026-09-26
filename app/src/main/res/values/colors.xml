@@ -3,6 +3,18 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- SmartPantry palette (light): fresh green + warm orange -->
+    <color name="sp_primary">#FF2E7D32</color>
+    <color name="sp_on_primary">#FFFFFFFF</color>
+    <color name="sp_primary_container">#FFC8E6C9</color>
+    <color name="sp_on_primary_container">#FF0B3D0F</color>
+    <color name="sp_secondary">#FFE65100</color>
+    <color name="sp_on_secondary">#FFFFFFFF</color>
+    <color name="sp_secondary_container">#FFFFE0B2</color>
+    <color name="sp_on_secondary_container">#FF4A2300</color>
+    <color name="sp_background">#FFF7F8F3</color>
+    <color name="sp_surface">#FFFFFFFF</color>
+
     <!-- Expiring-soon warning (pantry list label and banner) -->
     <color name="expiry_warning">#FFC62828</color>
     <color name="expiry_banner_background">#1FC62828</color>
