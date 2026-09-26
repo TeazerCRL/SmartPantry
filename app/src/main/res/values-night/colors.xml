@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SmartPantry palette (dark mode): same colours, lighter tones for dark backgrounds -->
+    <color name="sp_primary">#FF81C784</color>
+    <color name="sp_on_primary">#FF003909</color>
+    <color name="sp_primary_container">#FF1B5E20</color>
+    <color name="sp_on_primary_container">#FFC8E6C9</color>
+    <color name="sp_secondary">#FFFFB74D</color>
+    <color name="sp_on_secondary">#FF4A2300</color>
+    <color name="sp_secondary_container">#FF7A3E00</color>
+    <color name="sp_on_secondary_container">#FFFFE0B2</color>
+    <color name="sp_background">#FF121411</color>
+    <color name="sp_surface">#FF1D201C</color>
+
+    <color name="expiry_warning">#FFEF9A9A</color>
+    <color name="expiry_banner_background">#33EF9A9A</color>
+</resources>

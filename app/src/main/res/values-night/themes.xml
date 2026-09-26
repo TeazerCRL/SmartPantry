@@ -1,7 +1,42 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- App theme. Colours come from colors.xml, which has a light and a dark
+         (values-night) version, so this one theme works in both modes. -->
     <style name="Base.Theme.SmartPantry" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/sp_primary</item>
+        <item name="colorOnPrimary">@color/sp_on_primary</item>
+        <item name="colorPrimaryContainer">@color/sp_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/sp_on_primary_container</item>
+        <item name="colorSecondary">@color/sp_secondary</item>
+        <item name="colorOnSecondary">@color/sp_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/sp_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/sp_on_secondary_container</item>
+        <item name="android:colorBackground">@color/sp_background</item>
+        <item name="colorSurface">@color/sp_surface</item>
+
+        <item name="toolbarStyle">@style/Widget.SmartPantry.Toolbar</item>
+        <item name="materialCardViewStyle">@style/Widget.SmartPantry.Card</item>
+    </style>
+
+    <style name="Theme.SmartPantry" parent="Base.Theme.SmartPantry" />
+
+    <!-- Toolbar with a bold green title -->
+    <style name="Widget.SmartPantry.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="titleTextAppearance">@style/TextAppearance.SmartPantry.ToolbarTitle</item>
+    </style>
+
+    <style name="TextAppearance.SmartPantry.ToolbarTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <!-- Rounded cards used for list items and sections -->
+    <style name="Widget.SmartPantry.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+    </style>
+
+    <!-- Small section heading in the primary colour -->
+    <style name="TextAppearance.SmartPantry.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 </resources>
